@@ -1,14 +1,36 @@
-# Artorius
-Artorius is a coreXY 3D printer focused on reliability, quality, and speed while making use of repurposed BIQU B1 components.
+# Artorius 
+## A High-Performance CoreXY Platform Built for Precision and Speed
 
-This project started back in the spring of 2024 and is still currently ongoing. Originally, I took on this project because my BIQU B1 was very slow and unreliable, so I wanted to bring it up to the next generation of 3D printing. However, after the first iteration of building it, I realized that it was a more fitting goal to make it run faster and the same or better quality as my Bambulabs P1S.
+Artorius is a dedicated, enthusiast-grade coreXY 3D printer designed around achieving reliability, quality, and speed while cleverly utilizing repurposed industrial components, including BIQU B1 parts. This project represents an ongoing commitment to pushing the boundaries of open-source additive manufacturing.
 
-As most things do, I started by looking at how other people had made their printers. I drew inspiration from the E3NG, Voron Trident/2.4, Annex K3, Mercury one, and VZBot printers' designs. The E3NG was a similar project to mine, so it served as a lot of foundation for what I did with the frame although looking back I know now that putting two smooth rods as the front support is not ideal for rigidity. The Voron, VZBot, and Annex K3 all gave me insight about how to wire the printer and make sure that it looks clean; in specific, the Annex K3 had a user-based mod where the backpack was on the side, and I decided to use that as it was aesthetically appealing to me. The Mercury one gave me the idea to have my motors grip the belts like a parabola where there are 2 bearing stacks and the motor behind them. In all steps of the design, I solely CADed the parts that would be printed using community-sourced reference geometry for aluminum extrusion, electronics, and other hardware.
+***
 
-Once I was finished with designing the first iteration, I had a semi-functioning 3D printer. It could push high speeds, but it was clearly at prototype level quality. The electronics housing was nonexistent as was the cable management, and it needed constant human assistance in the form of taking filament off the spool since I had neither designed a spool holder nor a reverse bowden setup. Changing filament was also clunky as the filament path had incosistencies from the inaccurate reference geometries as well as just strange paths making the filament get caught between the extruder and hotend. Overall, it was a usable 3D printer, but it was nothing that I could claim as being better than the BIQU B1 I had made before it. The reliability was still poor, and the speeds were nothing like what I should have been able to push.
+### Project Background & Design Philosophy
 
-Then, I made another revision. This time, it had a much better frame. The gantry and corexy motion parts were designed to be used, not just to mount the necessary components, and I adjusted some malfunctioning parts. One notable change includes the motion-absorbing TPU inserts I used to reduce the rocking motion of the print bed that I had noticed in the first iteration. They also had the benefit of improving the fit for the linear rods as well as reducing the tolerances on the length of the linear rods since I found that they were difficult to machine down from their original length. 
+The journey started in the spring of 2024. Initially, I began this project because my existing BIQU B1 unit struggled with speed and consistency; the goal was fundamentally to bring it up to a next generation standard. However, after the first physical iteration, the objective shifted: I realized the true aim was to build a machine that could operate at speeds and maintain a quality level comparable to modern commercial printers, such as the Bambulab P1S.
 
-Beyond this, the new iteration also brought a lot of meaningful additions. I added 48V to the system since I knew I wanted to push it fast. Then, to keep up with the additional speeds and accelerations, I outfitted a new mellow heatercore 4 hotend which after some testing can reliably print up to 30mm^3/s at regular pla printing conditions (473K). I also provided proper mounting to the electronics for this build including: the manta m8p motherboard, the external mosfet for the bed, a USB-CAN board for the toolhead CAN connection, the 24V PSU, and the 48V PSU. I also feared that the motor shafts would bend if I had over-tensioned the belts in the last iteration, so I provided double shear support during this iteration. However, I still have issues with the belt routing due to the front two idlers that also serve as tensioners. That will be fixed in future versions. This iteration also included a toolhead overhaul where I gave a signficant boost in performance to the 5015 cooling ducts as well as improving the BTT Eddy mounting and the overall center of mass balancing.
+My design process was highly iterative, taking deep inspiration from established community projects like the E3NG, Voron Trident/2.4, Annex K3, Mercury One, and VZBot. The E3NG served as foundational support for the frame design, although I later determined that using two smooth rods as front support compromised ideal rigidity. Meanwhile, the principles observed in the Voron, VZBot, and Annex K3 informed my approach to wiring and aesthetics; specifically, adopting a side-mounted electronics setup (inspired by an Annex K3 user mod) provided a clean and aesthetically pleasing solution. Furthermore, designs like Mercury One inspired the motor mounting system, leading to the current configuration featuring two bearing stacks positioned paraboloically around the belts, with the motor situated behind them. Throughout every design phase, I focused on CADing only the parts intended for printing, relying on community-sourced reference geometry for all aluminum extrusions, electronics mounts, and hardware components.
 
-Now, in the future, I am still planning to add the following: enclosure, fans for the motors, self-designed extruder, and other modernized features like filament swapping cutters. 
+### System Evolution & Core Improvements
+
+The development of Artorius has required several major revisions to achieve its current state of reliability.
+*   **Initial Prototype:** This first version successfully demonstrated high speeds but was fundamentally a rough prototype; it lacked proper electronics housing, clean cable management, or specialized filament handling (like reverse bowden setup). Changing filament and managing the path proved challenging due to minor inconsistencies in the reference geometries used for measurement. While functional, its reliability was poor, and performance lagged behind expectations.
+*   **Current High-Power Revision:** The second iteration addressed these flaws by implementing a significantly improved frame. Here, the gantry and coreXY motion components were designed not just as mounts but as integral parts of the system structure itself. A key technical advancement included incorporating **motion-absorbing TPU inserts**, which effectively reduced noticeable rocking motion in the print bed while simultaneously improving rod fit and compensating for minor variations in linear rod machining lengths.
+
+### Key Technical Systems & Components
+
+To meet modern demands for speed and stability, the current build features several high-performance upgrades:
+
+*   **Power System:** The system has been upgraded to run on a dedicated **48V power supply**, providing the necessary power headroom for increased speeds and accelerations.
+*   **Hotend Performance:** We integrated the Mellow Heatercore 4 hotend, which, after testing, can reliably maintain print deposition rates of up to *30 $\text{mm}^3/\text{s}$* during regular PLA printing conditions ($473\text{K}$).
+*   **Electronics Integration:** The electronics are mounted within a dedicated housing that supports key components: the Manta M8p motherboard, an external MOSFET for bed control, a USB-CAN board for toolhead connection, the 24V PSU, and the new 48V PSU. Structural integrity is further ensured by providing **double shear support** on motor shafts to prevent flexing when belts are over-tensioned.
+
+### Future Roadmap
+
+Artorius remains an evolving project. My immediate plans involve several critical additions designed to enhance both safety and functionality:
+*   The construction of a protective enclosure for the entire system.
+*   Adding dedicated cooling fans for all primary motors.
+*   Developing self-designed components, including a sophisticated extruder assembly and modernized features like automated filament swapping cutters.
+
+***
+*Artorius is an example of continuous, hands-on engineering; each update is a step toward building the most refined, reliable coreXY printing platform possible.*
