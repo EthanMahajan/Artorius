@@ -22,7 +22,7 @@ The development of Artorius has required several major revisions to achieve its 
 To meet modern demands for speed and stability, the current build features several high-performance upgrades:
 
 *   **Power System:** The system has been upgraded to run on a dedicated **48V power supply**, providing the necessary power headroom for increased speeds and accelerations.
-*   **Hotend Performance:** We integrated the Mellow Heatercore 4 hotend, which, after testing, can reliably maintain print deposition rates of up to *30 $\text{mm}^3/\text{s}$* during regular PLA printing conditions ($473\text{K}$).
+*   **Hotend Performance:** We integrated the Mellow Heatercore 4 hotend, which, after testing, can reliably maintain print deposition rates of up to *30 mm^3/s* during regular PLA printing conditions ($473\text{K}$).
 *   **Electronics Integration:** The electronics are mounted within a dedicated housing that supports key components: the Manta M8p motherboard, an external MOSFET for bed control, a USB-CAN board for toolhead connection, the 24V PSU, and the new 48V PSU. Structural integrity is further ensured by providing **double shear support** on motor shafts to prevent flexing when belts are over-tensioned.
 
 ### Future Roadmap
